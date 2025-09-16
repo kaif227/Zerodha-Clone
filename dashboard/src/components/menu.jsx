@@ -61,7 +61,7 @@ const handleLogout = () => {
 
   const handleSignupRedirect = () => {
     // Redirect to frontend signup page
-    window.location.href = "http://localhost:5173/signup"; // adjust frontend path
+    window.location.href = `${import.meta.env.VITE_API_FRONTEND_URL}/signup`; // adjust frontend path
   };
 
   const menuClass = "menu";
