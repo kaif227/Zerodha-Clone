@@ -35,13 +35,21 @@ const port = process.env.PORT;
 
 app.use(express.json());
 app.use(bodyParser.json());
-app.use(
-  cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+const allowedOrigins = [
+  process.env.FRONTEND_URL,   // set on Render later
+  process.env.DASHBOARD_URL,  // set on Render later
+  "http://localhost:5173",    // local dev
+  "http://localhost:5174"     // local dev dashboard
+];
+
+app.use(cors({
+  origin: (origin, cb) => {
+    // allow undefined (like Postman) or allowedOrigins
+    if (!origin || allowedOrigins.includes(origin)) cb(null, true);
+    else cb(new Error("Not allowed by CORS"), false);
+  },
+  credentials: true
+}));
 app.use(cookieParser());//for auth
 
 
