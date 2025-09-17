@@ -21,6 +21,7 @@ const cookieParser = require("cookie-parser");//for auth
 // getting-started.js
 
 const dbUrl = process.env.ATLASDB_URL
+const port = process.env.PORT;
 main()
 .then(() =>{
     console.log("MongoDB is connected")
@@ -31,7 +32,6 @@ main()
 async function main() {
     await mongoose.connect(dbUrl);
 }
-const port = process.env.PORT;
 
 app.use(express.json());
 app.use(bodyParser.json());

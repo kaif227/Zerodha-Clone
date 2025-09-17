@@ -41,7 +41,7 @@ function Team() {
             <p>Playing basketball is his zen</p>
             <p>
               Connect on{" "}
-              <a href="" style={{ textDecoration: "none",color:"#387ED1" }}>
+              <a href="/" style={{ textDecoration: "none",color:"#387ED1" }}>
                 Homepage
               </a>{" "}
               /{" "}
