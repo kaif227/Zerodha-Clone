@@ -7,7 +7,7 @@ const Summary = () => {
 
     useEffect(() => {
   axios
-    .post("http://localhost:8080/verify", {}, { withCredentials: true })
+    .post(`${import.meta.env.VITE_API_URL }/verify`, {}, { withCredentials: true })
     .then((res) => {
       if (res.data.status) {
         setUsername(res.data.user);
