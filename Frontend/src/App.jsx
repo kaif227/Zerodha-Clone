@@ -1,15 +1,13 @@
-import HomePage from './landing_page/home/homePage'
-
+import HomePage from "./landing_page/home/homePage";
 
 function App() {
-
   return (
     <>
       <div>
-      <HomePage/>
+        <HomePage />
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
