@@ -11,6 +11,7 @@ const authRoute = require("./routes/authRoute");
 
 const cookieParser = require("cookie-parser");//for auth
 
+const path = require("path");
 /////
 
 // const { MONGO_URL, PORT } = process.env;
@@ -221,6 +222,15 @@ app.use(cookieParser());//for auth
 // })
 // res.send("Done");
 // });
+
+
+// Serve static frontend
+app.use(express.static(path.join(__dirname, "dist")));
+
+// Catch-all route for React Router
+app.get(/.*/, (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
+});
 
 
 app.get("/allHoldings",async(req,res)=>{
