@@ -225,12 +225,6 @@ app.use(cookieParser());//for auth
 
 
 // Serve static frontend
-app.use(express.static(path.join(__dirname, "dist")));
-
-// Catch-all route for React Router
-app.get(/.*/, (req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
-});
 
 
 app.get("/allHoldings",async(req,res)=>{
