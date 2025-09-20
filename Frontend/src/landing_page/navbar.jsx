@@ -82,25 +82,29 @@ function Navbar() {
               )}
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/about">
+              <Link className="nav-link" to="/about">
                 About
-              </a>
+              </Link>
             </li>
+
             <li className="nav-item">
-              <a className="nav-link" href="products">
+              <Link className="nav-link" to="/products">
                 Products
-              </a>
+              </Link>
             </li>
+
             <li className="nav-item">
-              <a className="nav-link" href="pricing">
+              <Link className="nav-link" to="/pricing">
                 Pricing
-              </a>
+              </Link>
             </li>
+
             <li className="nav-item">
-              <a className="nav-link" href="support">
+              <Link className="nav-link" to="/support">
                 Support
-              </a>
+              </Link>
             </li>
+
             {/* Toggler button */}
             <li className="nav-item position-relative">
               <ToggleButton
