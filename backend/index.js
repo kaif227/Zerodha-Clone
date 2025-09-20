@@ -37,7 +37,7 @@ async function main() {
 app.use(express.json());
 app.use(bodyParser.json());
 const allowedOrigins = [
-  "https://zerodha-frontendd.onrender.com",
+  "https://zerodha-front-end.onrender.com",
   "https://zerodha-backend-ybb6.onrender.com", 
    process.env.FRONTEND_URL, // set on Render later
   process.env.DASHBOARD_URL,  // set on Render later
