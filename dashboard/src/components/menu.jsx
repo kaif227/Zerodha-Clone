@@ -65,7 +65,7 @@ const handleLogout = () => {
 //   window.location.href = url;
 // };
 const handleSignupRedirect = () => {
-  const url = "https://zerodha-front-end.onrender.com";
+  const url = import.meta.env.VITE_API_FRONTEND_URL
   console.log("Redirecting to:", url);
   window.location.replace(url); // replace is safer than href here
 };

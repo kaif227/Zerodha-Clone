@@ -40,9 +40,9 @@ const allowedOrigins = [
   "https://zerodha-front-end.onrender.com",
   "https://zerodha-backend-ybb6.onrender.com", 
    process.env.FRONTEND_URL, // set on Render later
-  process.env.DASHBOARD_URL,  // set on Render later
-  "http://localhost:5173",    // local dev
-  "http://localhost:5174"     // local dev dashboard
+   process.env.DASHBOARD_URL,  // set on Render later
+  // "http://localhost:5173",    // local dev
+  // "http://localhost:5174"     // local dev dashboard
 ];
 
 app.use(cors({
