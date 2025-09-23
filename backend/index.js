@@ -35,10 +35,7 @@ async function main() {
 }
 app.use(bodyParser.json());
 const allowedOrigins = [
-  "https://zerodha-front-end.onrender.com",
-  "https://zerodha-backend-ybb6.onrender.com", 
-   process.env.FRONTEND_URL, // set on Render later
-   process.env.DASHBOARD_URL,  // set on Render later
+ 
     "http://localhost:5173",              // dashboard local
     "http://localhost:5174",              // frontend local
     "https://zerodha-front-end.onrender.com", // deployed frontend
