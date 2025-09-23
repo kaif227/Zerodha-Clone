@@ -59,10 +59,18 @@ const handleLogout = () => {
 };
 
 
-  const handleSignupRedirect = () => {
-    // Redirect to frontend signup page
-    window.location.href = `${import.meta.env.VITE_API_FRONTEND_URL}/signup`; // adjust frontend path
-  };
+//   const handleSignupRedirect = () => {
+//   const url = `${import.meta.env.VITE_API_FRONTEND_URL}/signup`;
+//   console.log("Redirecting to:", url);
+//   window.location.href = url;
+// };
+const handleSignupRedirect = () => {
+  const url = "https://zerodha-front-end.onrender.com";
+  console.log("Redirecting to:", url);
+  window.location.replace(url); // replace is safer than href here
+};
+
+
 
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
