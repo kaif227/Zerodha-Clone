@@ -42,12 +42,23 @@ const allowedOrigins = [
     "https://zerodha-dashboard-qdlw.onrender.com" // deployed dashboard
 ];
 
+// app.use(cors({
+//   origin: (origin, cb) => {
+//     // allow undefined (like Postman) or allowedOrigins
+//     if (!origin || allowedOrigins.includes(origin)) cb(null, true);
+//     else cb(new Error("Not allowed by CORS"), false);
+//   },
+//   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//   credentials: true
+// }));
+
 app.use(cors({
-  origin: (origin, cb) => {
-    // allow undefined (like Postman) or allowedOrigins
-    if (!origin || allowedOrigins.includes(origin)) cb(null, true);
-    else cb(new Error("Not allowed by CORS"), false);
-  },
+  origin: [
+    "http://localhost:5173",                     // dashboard local
+    "http://localhost:5174",                     // frontend local
+    "https://zerodha-front-end.onrender.com",    // deployed frontend
+    "https://zerodha-dashboard-qdlw.onrender.com" // deployed dashboard
+  ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true
 }));
