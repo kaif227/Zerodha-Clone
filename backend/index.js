@@ -33,16 +33,16 @@ main()
 async function main() {
     await mongoose.connect(dbUrl);
 }
-
-app.use(express.json());
 app.use(bodyParser.json());
 const allowedOrigins = [
   "https://zerodha-front-end.onrender.com",
   "https://zerodha-backend-ybb6.onrender.com", 
    process.env.FRONTEND_URL, // set on Render later
    process.env.DASHBOARD_URL,  // set on Render later
-  // "http://localhost:5173",    // local dev
-  // "http://localhost:5174"     // local dev dashboard
+    "http://localhost:5173",              // dashboard local
+    "http://localhost:5174",              // frontend local
+    "https://zerodha-front-end.onrender.com", // deployed frontend
+    "https://zerodha-dashboard-qdlw.onrender.com" // deployed dashboard
 ];
 
 app.use(cors({
@@ -51,8 +51,11 @@ app.use(cors({
     if (!origin || allowedOrigins.includes(origin)) cb(null, true);
     else cb(new Error("Not allowed by CORS"), false);
   },
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true
 }));
+
+app.use(express.json());
 app.use(cookieParser());//for auth
 
 
