@@ -52,7 +52,7 @@ function Navbar() {
       style={{ backgroundColor: "#fff" }}
     >
       <div className="container p-2">
-        <Link className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
           <img
             src="media/images/logo.svg"
             alt="logo"
