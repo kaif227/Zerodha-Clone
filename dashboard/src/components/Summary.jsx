@@ -6,8 +6,7 @@ const Summary = () => {
     const [username, setUsername] = useState(null);
 
     useEffect(() => {
-  axios
-    .post(`${import.meta.env.VITE_API_URL }/verify`, {}, { withCredentials: true })
+  axios.post(`${import.meta.env.VITE_API_URL }/verify`, {}, { withCredentials: true })
     .then((res) => {
       if (res.data.status) {
         setUsername(res.data.user);

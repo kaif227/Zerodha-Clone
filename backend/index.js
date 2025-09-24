@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const {OrdersModel} = require("./models/ordersModel")
 const authRoute = require("./routes/authRoute"); 
+const {User} = require("./models/UserModel");//for auth
 
 const cookieParser = require("cookie-parser");//for auth
 
@@ -41,7 +42,6 @@ const allowedOrigins = [
     "https://zerodha-front-end.onrender.com", // deployed frontend
     "https://zerodha-dashboard-qdlw.onrender.com" // deployed dashboard
 ];
-
 // app.use(cors({
 //   origin: (origin, cb) => {
 //     // allow undefined (like Postman) or allowedOrigins
@@ -65,7 +65,6 @@ app.use(cors({
 
 app.use(express.json());
 app.use(cookieParser());//for auth
-
 
 
 
@@ -195,8 +194,10 @@ app.use(cookieParser());//for auth
 //     })
 //     newHoldings.save()
 // })
+// console.log(newHoldings)
 // res.send("working")
-// })
+// })/////////////////////////Holdings data
+
 // app.get("/Position",async(req,res)=>{
 // let tempPosition = [
 //     {
@@ -234,11 +235,10 @@ app.use(cookieParser());//for auth
 //     newPosition.save()
 // })
 // res.send("Done");
-// });
+// });/////////////////////////Position data
 
 
 // Serve static frontend
-
 
 app.get("/allHoldings",async(req,res)=>{
     let allHoldings = await HoldingsModel.find()
@@ -266,8 +266,6 @@ app.post("/logout", (req, res) => {
 
 app.use("/", authRoute)//for auth
 
-//https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/#howtosetupmongodb 
-//for authentication and authorization using JWT and bcryptjs
 
 
 app.listen(port, () => {

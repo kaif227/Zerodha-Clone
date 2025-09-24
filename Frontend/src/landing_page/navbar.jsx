@@ -36,23 +36,30 @@ function Navbar() {
   const goToKite = () => {
     // If dashboard is a separate app:
     window.location.href = `${import.meta.env.VITE_API_DASHBORD_URL}`;
-    // If dashboard is part of the same app:
-    // navigate("/kite");
   };
+//   const goToKite = () => {
+//   if (user) {
+//     // ✅ Logged in → redirect to Kite app
+//     // You can also append username if you need: ?username=...
+//     window.location.href = `${import.meta.env.VITE_API_DASHBORD_URL}?user=${user.username}`;
+//   } else {
+//     navigate("/signup");
+//   }
+// };
   return (
     <nav
       className="navbar navbar-expand-lg border-bottom sticky-top"
       style={{ backgroundColor: "#fff" }}
     >
       <div className="container p-2">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" href="/">
           <img
             src="media/images/logo.svg"
             alt="logo"
             className="img-fluid"
             style={{ maxWidth: "120px", marginLeft: "40px" }}
           />
-        </a>
+        </Link>
 
         {/* Toggler */}
         <button

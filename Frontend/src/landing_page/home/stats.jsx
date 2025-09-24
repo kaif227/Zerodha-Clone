@@ -1,6 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Stats() {
+    const goToKite = () => {
+    // If dashboard is a separate app:
+    window.location.href = `${import.meta.env.VITE_API_DASHBORD_URL}`;
+    // If dashboard is part of the same app:
+    // navigate("/kite");
+  };
   return (
     <div className="container p-3">
       <div className="row p-3 p-md-5 align-items-center">
@@ -45,12 +52,12 @@ function Stats() {
             className="img-fluid mb-3"
           />
           <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
-            <a href="#" style={{ textDecoration: "none" }}>
+            <Link to="/products" style={{ textDecoration: "none" }}>
               Explore our product <i className="fa-solid fa-arrow-right"></i>
-            </a>
-            <a href="#" style={{ textDecoration: "none" }}>
+            </Link>
+            <Link to="#" onClick={goToKite} style={{ textDecoration: "none" }}>
               Try Kite demo <i className="fa-solid fa-arrow-right"></i>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
