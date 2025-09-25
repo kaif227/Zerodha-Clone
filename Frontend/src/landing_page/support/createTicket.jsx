@@ -84,15 +84,15 @@ function CreateTicket() {
           {/* Right Column */}
           <div className="col-lg-4 col-md-12">
             <div
-              className="p-3 fs-5 mb-4"
+              className="p-2  mb-4"
               style={{
+                fontSize: "1.1rem",
                 backgroundColor: "#fff4edff",
                 borderLeft: "10px solid #ff9500ff",
               }}
             >
-              <ul style={{ color: "#387ED1", textDecoration: "underline" }}>
+              <ul style={{ color: "#387ED1", textDecoration: "underline",lineHeight:"2.2rem" }}>
                 <li>Electricity Futures contracts expiry - September 2025</li>
-                <br />
                 <li>Surveillance measure on scrips - September 2025</li>
               </ul>
             </div>
